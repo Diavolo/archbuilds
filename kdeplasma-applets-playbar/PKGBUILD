@@ -9,12 +9,12 @@ url="http://kde-apps.org/content/show.php?content=165396"
 license=('GPL')
 depends=('kdebase-workspace')
 makedepends=('cmake' 'automoc4')
-source=("https://github.com/audoban/PlayBar/archive/v0.6.1/PlayBar-${pkgver}.tar.gz")
-md5sums=('659047be95d21ae001a6e9d02bdec9c0')
+source=("https://github.com/audoban/PlayBar/archive/v0.7/PlayBar-${pkgver}.tar.gz")
+md5sums=('adc3512aae6f57d45236c4dccc68e11e')
 
-prepare() {
-  mkdir build
-}
+#prepare() {
+#  mkdir build
+#}
 
 build() {
   cd build
