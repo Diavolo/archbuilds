@@ -1,0 +1,34 @@
+# Maintainer: Tony Sweets <tony.sweets@gmail.com>
+# Contributor: Valentin-Costel Hăloiu <vially.ichb@gmail.com> (Maintainer Glassfish v3)
+# Contributor: Bernhard Friedreich <friesoft@gmail.com> (maintainer v3)
+# Contributor: aleph (rc script v3)
+# Contributor: coverslide (new version v3)
+# Contributor: andrej (new pkgbuild v3)
+# Contributor: xtecuan (config v3)
+# Contributor: Thief_hu (rc script fix v3)
+# Contributor: Simon Tunnat (systemd service file v3)
+
+pkgname=glassfish-v4
+pkgver=4.1
+pkgrel=2
+pkgdesc="GlassFish 4 is a Java EE 7 open source application server"
+url="http://glassfish.java.net/"
+license=(GPL CDDL)
+provides=(glassfish)
+conflicts=(glassfish)
+depends=('jdk')
+makedepends=('jdk')
+arch=(i686 x86_64)
+options=(!strip)
+source=(http://download.java.net/glassfish/${pkgver}/release/glassfish-${pkgver}.zip
+       glassfish.service
+)
+
+md5sums=('2fd41ad9af8d41d1c721c1b25191f674'
+         '4a474d4bc85a5cd354323d71db1be01f')
+
+package() {
+    mkdir -p $pkgdir/opt
+    mv glassfish4 $pkgdir/opt/
+    install -D $srcdir/glassfish.service $pkgdir/usr/lib/systemd/system/glassfish.service
+}
