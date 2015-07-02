@@ -5,10 +5,10 @@ pkgver=0.7.1
 pkgrel=1
 pkgdesc="MPRIS2 client, written in QML for Plasma KDE"
 arch=('any')
-url="http://kde-apps.org/content/show.php?content=165396"
+url="https://github.com/audoban/PlayBar"
 license=('GPL')
-depends=('kdebase-workspace')
-makedepends=('cmake' 'automoc4')
+depends=('kdelibs')
+makedepends=('gcc' 'cmake' 'automoc4')
 source=("https://github.com/audoban/PlayBar/archive/v0.7.1/PlayBar-${pkgver}.tar.gz")
 md5sums=('b29f9fe7592f1b7044037b41519960d1')
 
